@@ -34,27 +34,9 @@ public class SearchFragment extends Fragment {
     }
 
     private void fillMessageList(){
-        messageList.add(new Message(R.drawable.default_avatar, "avatar", "Salam"));
-        messageList.add(new Message(R.drawable.default_avatar, "avatar", "Salam"));
-        messageList.add(new Message(R.drawable.default_avatar, "avatar", "Salam"));
-        messageList.add(new Message(R.drawable.default_avatar, "avatar", "Salam"));
-        messageList.add(new Message(R.drawable.default_avatar, "avatar", "Salam"));
-        messageList.add(new Message(R.drawable.default_avatar, "avatar", "Salam"));
-        messageList.add(new Message(R.drawable.default_avatar, "avatar", "Salam"));
-        messageList.add(new Message(R.drawable.default_avatar, "avatar", "Salam"));
-        messageList.add(new Message(R.drawable.default_avatar, "avatar", "Salam"));
-        messageList.add(new Message(R.drawable.default_avatar, "avatar", "Salam"));
-        messageList.add(new Message(R.drawable.default_avatar, "avatar", "Salam"));
-        messageList.add(new Message(R.drawable.default_avatar, "avatar", "Salam"));
-        messageList.add(new Message(R.drawable.default_avatar, "avatar", "Salam"));
-        messageList.add(new Message(R.drawable.default_avatar, "avatar", "Salam"));
-        messageList.add(new Message(R.drawable.default_avatar, "avatar", "Salam"));
-        messageList.add(new Message(R.drawable.default_avatar, "avatar", "Salam"));
-        messageList.add(new Message(R.drawable.default_avatar, "avatar", "Salam"));
-        messageList.add(new Message(R.drawable.default_avatar, "avatar", "Salam"));
-        messageList.add(new Message(R.drawable.default_avatar, "avatar", "Salam"));
-        messageList.add(new Message(R.drawable.default_avatar, "avatar", "Salam"));
-
+        for (int i = 0; i < 100 ; i++) {
+            messageList.add(new Message(R.drawable.default_avatar, "Keyhan"+i , "@_say10__"));
+        }
     }
 
     private void setupRecyclerView(View view){
