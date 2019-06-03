@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Twitter</string>
+    <string name="signup_check">3 + 7 = ?</string>
+    <string name="notification_icon">NOTIFICATION</string>
+    <string name="home_icon">HOME</string>
+    <string name="search_icon">SEARCH</string>
+</resources>

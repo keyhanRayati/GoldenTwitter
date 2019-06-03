@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#ec05ab</color>
+
+    <color name="LoginStartGradient">#0467e9</color>
+    <color name="LoginEndGradient">#19eaf5</color>
+    <color name="colorWhite">#fff</color>
+    <color name="colorLoginBtn">#0073ff</color>
+    <color name="colorSignupBtn">#00aaff</color>
+    <color name="colorLoginBtnText">#0955ec</color>
+    <color name="colorLoginPage">#3F51B5</color>
+    <color name="colorBlack">#000000</color>
+    <color name="mainColor">#1b3b61</color>
+    <color name="toolbarColor">#1f5281</color>
+    <color name="colorActiveIcon">#0094ff</color>
+    <color name="colorGray">#8c8c8c</color>
+    <color name="searchEdittextBackground">#040F3C</color>
+    <color name="mainBackground">#1b3b61</color>
+</resources>
