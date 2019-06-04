@@ -64,6 +64,9 @@ public class Twitte {
         return favoriteNumber;
     }
 
+    public void setTextOfTwitte(String textOfTwitte) {
+        this.textOfTwitte = textOfTwitte;
+    }
 
 
     public Twitte(int avatarPic, String username, String userId,
@@ -83,11 +86,6 @@ public class Twitte {
         this.retwitteNumber = retwitteNumber;
         this.favoriteNumber = favoriteNumber;
     }
-
-
-
-
-
 
 
 }
