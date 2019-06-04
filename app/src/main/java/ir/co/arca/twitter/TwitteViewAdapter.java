@@ -15,6 +15,7 @@ public class TwitteViewAdapter<M extends RecyclerView.ViewHolder> extends Recycl
     public TwitteViewAdapter(List<Twitte> twitteList) {
         this.twitteList = twitteList;
     }
+
     @Override
     public TwitteViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_list_item, parent, false);

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardElevation="4dp"
     android:layout_marginBottom="1dp"
+    android:background="@color/mainBackground"
 
-    android:background="@color/mainBackground">
+    app:cardElevation="4dp">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/cardOfEachTweet"
@@ -22,9 +22,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
+
             android:src="@drawable/default_avatar"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +42,7 @@
             android:textColor="@color/colorWhite"
             android:textSize="15sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/avatarHome"
@@ -56,17 +55,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
             android:text="\@_say10__"
             android:textColor="@color/colorGray"
             android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/avatarName"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/avatarMessage"
@@ -81,7 +74,6 @@
             android:text=""
             android:textColor="@color/colorWhite"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/avatarHome"
@@ -99,7 +91,6 @@
             android:text="32m"
             android:textColor="@color/colorGray"
             android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/avatarId"
@@ -112,6 +103,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+
             android:layout_marginEnd="4dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/ic_favorite"
@@ -145,6 +137,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+
             android:layout_marginBottom="8dp"
             android:background="@drawable/ic_renew"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -160,6 +153,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
+
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="10dp"
             android:text="4"
@@ -189,6 +183,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
+
             android:layout_marginEnd="146dp"
             android:layout_marginBottom="10dp"
             android:text="4"
