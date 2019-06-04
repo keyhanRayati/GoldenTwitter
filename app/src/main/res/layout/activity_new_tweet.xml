@@ -68,7 +68,7 @@
         android:hint="What's happening?"
         android:background="@drawable/write_tweet_theme"
         android:textColorHint="@color/colorGray"
-        android:maxLength="200"
+        android:maxLength="280"
         android:textSize="16sp"
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"

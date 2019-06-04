@@ -44,7 +44,7 @@ public class HomeFragment extends Fragment {
 
     private void fillMessageList() {
         for (int i = 0; i < 50; i++) {
-            twitteList.add(new Twitte(R.drawable.avatar_picture, "Keyhan", "@_say10__",
+            twitteList.add(new Twitte(R.drawable.default_avatar, "Keyhan", "@_say10__",
                     "32m", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters",
                     R.drawable.ic_mention, R.drawable.ic_renew,
                     R.drawable.ic_favorite, "4", "4",
