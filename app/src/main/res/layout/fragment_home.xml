@@ -49,7 +49,7 @@
         app:srcCompat="@drawable/avatar_picture" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/homeRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:padding="8dp"
@@ -59,5 +59,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageView"
         app:layout_constraintVertical_bias="0.369" />
+
+    <ImageButton
+        android:id="@+id/newTweet"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@mipmap/ic_pen"
+        android:elevation="18dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/homeRecyclerView"
+        app:layout_constraintTop_toTopOf="@+id/homeRecyclerView"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@mipmap/ic_pen" />
 
 </android.support.constraint.ConstraintLayout>

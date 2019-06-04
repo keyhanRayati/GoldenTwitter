@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
-    android:layout_marginBottom="8dp"
+    android:layout_marginBottom="1dp"
     app:cardElevation="4dp"
     android:background="@color/mainBackground">
 
@@ -32,7 +32,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/avatarName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

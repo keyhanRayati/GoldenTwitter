@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import java.util.List;
 
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<MessageViewHolder> {
+public class RecyclerViewAdapter<M extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<MessageViewHolder> {
 
     List<Message> messageList;
 

@@ -28,7 +28,7 @@ public class MessageViewHolder extends RecyclerView.ViewHolder {
     public MessageViewHolder(View itemView) {
         super(itemView);
         avatar = itemView.findViewById(R.id.avatar);
-        name = itemView.findViewById(R.id.name);
+        name = itemView.findViewById(R.id.avatarName);
         lastMessage = itemView.findViewById(R.id.lastMessage);
     }
 }
