@@ -47,7 +47,7 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         setupNewTweet(view);
         setupProfile(view);
-        setupOtherProfile(view);
+     //   setupOtherProfile(view);
         setupRecyclerView(view);
     }
 
@@ -106,14 +106,14 @@ public class HomeFragment extends Fragment {
             }
         });
     }
-    private void setupOtherProfile(View view){
-        circleImageView = view.findViewById(R.id.avatarHome);
-        intent3 = new Intent(getActivity(), OtherProfile.class);
-        circleImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(intent3);
-            }
-        });
-    }
+//    private void setupOtherProfile(View view){
+//        circleImageView = view.findViewById(R.id.avatarHome);
+//        intent3 = new Intent(getActivity(), OtherProfile.class);
+//        circleImageView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(intent3);
+//            }
+//        });
+//    }
 }

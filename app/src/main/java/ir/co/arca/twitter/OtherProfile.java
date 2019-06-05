@@ -20,7 +20,7 @@ public class OtherProfile extends AppCompatActivity {
     private ImageView imageView;
 
     private void back(){
-        imageView = findViewById(R.id.backButtonMyProfile);
+        imageView = findViewById(R.id.backButtonOtherProfile);
         intent = new Intent(OtherProfile.this, TwitterActivity.class);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -63,7 +63,7 @@ public class SearchFragment extends Fragment {
 
     private void setupRecyclerView(View view){
         recyclerView = view.findViewById(R.id.recyclerView);
-        recyclerViewAdapter = new RecyclerViewAdapter<RecyclerView.ViewHolder>(messageList);
+        recyclerViewAdapter = new RecyclerViewAdapter<RecyclerView.ViewHolder>(messageList , getContext());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(recyclerViewAdapter);

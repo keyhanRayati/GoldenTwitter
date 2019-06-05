@@ -38,7 +38,7 @@ public class TwitteViewAdapter<M extends RecyclerView.ViewHolder> extends Recycl
         holder.getRetwitte().setImageResource(twitteList.get(position).getRetwitte());
         holder.getRetwitteNumber().setText(twitteList.get(position).getRetwitteNumber());
         holder.getTextOfTwitte().setText(twitteList.get(position).getTextOfTwitte());
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.getAvatarPic().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 context.startActivity(new Intent(context , OtherProfile.class) );
