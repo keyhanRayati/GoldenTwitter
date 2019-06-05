@@ -26,6 +26,8 @@ public class HomeFragment extends Fragment {
     private List<Twitte> twitteList = new ArrayList<>();
     private ImageButton newTweet;
     private Intent intent;
+    private ImageButton myprofileImage;
+    private Intent intent2;
 
 
     @Nullable
@@ -39,6 +41,7 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setupNewTweet(view);
+        setupProfile(view);
         setupRecyclerView(view);
     }
 
@@ -83,6 +86,17 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 startActivity(intent);
+            }
+        });
+    }
+
+    private void setupProfile(View view){
+        myprofileImage = view.findViewById(R.id.imageButton6);
+        intent2 = new Intent(getActivity(), MyProfile.class);
+        myprofileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intent2);
             }
         });
     }
