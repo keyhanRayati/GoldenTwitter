@@ -1,5 +1,6 @@
 package ir.co.arca.twitter;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -9,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +20,21 @@ public class SearchFragment extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerViewAdapter<RecyclerView.ViewHolder> recyclerViewAdapter;
     private List<Message> messageList = new ArrayList<>();
+    private ImageView imageView;
+    private Intent intent;
+
+    public void gotoMyprofile(View view){
+        imageView = view.findViewById(R.id.myProfileInSearchFragment);
+        intent = new Intent(getContext(), MyProfile.class);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intent);
+            }
+        });
+
+    }
+
 
     @Nullable
     @Override
@@ -30,6 +47,7 @@ public class SearchFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setupRecyclerView(view);
+        gotoMyprofile(view);
     }
 
     private void fillMessageList(){

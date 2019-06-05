@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite"
-    tools:context=".MyProfile">
+    android:background="@color/colorGray"
+    tools:context=".MyProfile"
+    >
 
     <android.support.constraint.ConstraintLayout
         app:layout_goneMarginBottom="1dp"
@@ -21,7 +22,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <ImageView
-            android:id="@+id/backButton"
+            android:id="@+id/backButtonMyProfile"
             android:layout_width="40dp"
             android:layout_height="30dp"
             android:layout_marginStart="8dp"
@@ -37,13 +38,13 @@
             android:layout_height="100dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
 
+            android:layout_marginEnd="8dp"
             android:src="@drawable/default_avatar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/backButton" />
+            app:layout_constraintTop_toBottomOf="@+id/backButtonMyProfile" />
 
         <TextView
             android:id="@+id/username"
@@ -128,10 +129,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
 
             android:maxLines="2"
-            android:text="Programmer and pizza lover! 🍕 \nProgrammer and pizza lover! 🍕"
+            android:text="Programmer and pizza lover! 🍕anddroid is my life *_* \nProgrammer and pizza lover! 🍕"
             android:textColor="@color/colorWhite"
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -143,9 +144,9 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/myProfileRecyclerView"
         android:layout_width="0dp"
-        android:background="@color/colorGray"
         android:layout_height="0dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/colorGray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
