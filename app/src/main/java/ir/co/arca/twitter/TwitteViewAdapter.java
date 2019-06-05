@@ -1,5 +1,7 @@
 package ir.co.arca.twitter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,9 +12,10 @@ import java.util.List;
 public class TwitteViewAdapter<M extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<TwitteViewHolder> {
 
     List<Twitte> twitteList;
+    Context context;
 
-
-    public TwitteViewAdapter(List<Twitte> twitteList) {
+    public TwitteViewAdapter(List<Twitte> twitteList , Context context) {
+        this.context = context;
         this.twitteList = twitteList;
     }
 
@@ -35,6 +38,12 @@ public class TwitteViewAdapter<M extends RecyclerView.ViewHolder> extends Recycl
         holder.getRetwitte().setImageResource(twitteList.get(position).getRetwitte());
         holder.getRetwitteNumber().setText(twitteList.get(position).getRetwitteNumber());
         holder.getTextOfTwitte().setText(twitteList.get(position).getTextOfTwitte());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.startActivity(new Intent(context , OtherProfile.class) );
+            }
+        });
     }
 
     @Override

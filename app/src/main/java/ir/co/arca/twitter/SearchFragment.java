@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class SearchFragment extends Fragment {
 
     private RecyclerView recyclerView;
@@ -22,6 +24,8 @@ public class SearchFragment extends Fragment {
     private List<Message> messageList = new ArrayList<>();
     private ImageView imageView;
     private Intent intent;
+    private CircleImageView circleImageView;
+    private Intent intent3;
 
     public void gotoMyprofile(View view){
         imageView = view.findViewById(R.id.myProfileInSearchFragment);
@@ -48,6 +52,7 @@ public class SearchFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         setupRecyclerView(view);
         gotoMyprofile(view);
+        //setupOtherProfile(view);
     }
 
     private void fillMessageList(){
@@ -63,4 +68,15 @@ public class SearchFragment extends Fragment {
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(recyclerViewAdapter);
     }
+
+//    private void setupOtherProfile(View view){
+//        circleImageView = view.findViewById(R.id.avatar);
+//        intent3 = new Intent(getActivity(), OtherProfile.class);
+//        circleImageView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(intent3);
+//            }
+//        });
+//    }
 }

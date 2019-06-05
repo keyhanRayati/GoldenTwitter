@@ -14,9 +14,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeFragment extends Fragment {
 
@@ -29,6 +32,8 @@ public class HomeFragment extends Fragment {
     private ImageButton myprofileImage;
     private Intent intent2;
 
+    private CircleImageView circleImageView;
+    private Intent intent3;
 
     @Nullable
     @Override
@@ -42,6 +47,7 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         setupNewTweet(view);
         setupProfile(view);
+        setupOtherProfile(view);
         setupRecyclerView(view);
     }
 
@@ -73,7 +79,7 @@ public class HomeFragment extends Fragment {
 
     private void setupRecyclerView(View view) {
         recyclerView = view.findViewById(R.id.homeRecyclerView);
-        twitteViewAdapter = new TwitteViewAdapter<RecyclerView.ViewHolder>(twitteList);
+        twitteViewAdapter = new TwitteViewAdapter<RecyclerView.ViewHolder>(twitteList , getContext());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(twitteViewAdapter);
@@ -97,6 +103,16 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 startActivity(intent2);
+            }
+        });
+    }
+    private void setupOtherProfile(View view){
+        circleImageView = view.findViewById(R.id.avatarHome);
+        intent3 = new Intent(getActivity(), OtherProfile.class);
+        circleImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intent3);
             }
         });
     }
