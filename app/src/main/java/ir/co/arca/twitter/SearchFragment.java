@@ -28,7 +28,7 @@ public class SearchFragment extends Fragment {
     private Intent intent3;
 
     public void gotoMyprofile(View view){
-        imageView = view.findViewById(R.id.myProfileInSearchFragment);
+        imageView = view.findViewById(R.id.followerPic);
         intent = new Intent(getContext(), MyProfile.class);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +62,7 @@ public class SearchFragment extends Fragment {
     }
 
     private void setupRecyclerView(View view){
-        recyclerView = view.findViewById(R.id.recyclerView);
+        recyclerView = view.findViewById(R.id.recyclerViewOnfolloerPage);
         recyclerViewAdapter = new RecyclerViewAdapter<RecyclerView.ViewHolder>(messageList , getContext());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);

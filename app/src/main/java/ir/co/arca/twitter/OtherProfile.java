@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,13 +20,40 @@ public class OtherProfile extends AppCompatActivity {
     private Intent intent;
     private ImageView imageView;
 
+    private Intent intent1;
+    private TextView textView1;
+
+    private Intent intent2;
+    private TextView textView2;
+
+    private void folower1(){
+        textView1 = findViewById(R.id.follower);
+        intent1 = new Intent(OtherProfile.this , Followers.class);
+        textView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intent1);
+            }
+        });
+    }
+    private void folower2(){
+        textView2 = findViewById(R.id.followerNumber);
+        intent2 = new Intent(OtherProfile.this , Followers.class);
+        textView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intent2);
+            }
+        });
+    }
+
     private void back(){
         imageView = findViewById(R.id.backButtonOtherProfile);
-        intent = new Intent(OtherProfile.this, TwitterActivity.class);
+      //  intent = new Intent(OtherProfile.this, TwitterActivity.class);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(intent);
+                onBackPressed();
             }
         });
     }

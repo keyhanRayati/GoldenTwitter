@@ -19,11 +19,11 @@ public class NewTweet extends AppCompatActivity {
 
     private void setupBackButton(){
         imageView = findViewById(R.id.backButton);
-        intent = new Intent(NewTweet.this , TwitterActivity.class);
+     //   intent = new Intent(NewTweet.this , TwitterActivity.class);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(intent);
+                onBackPressed();
             }
         });
     }
