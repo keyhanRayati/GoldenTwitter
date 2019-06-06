@@ -26,6 +26,8 @@ public class OtherProfile extends AppCompatActivity {
     private Intent intent2;
     private TextView textView2;
 
+
+
     private void folower1(){
         textView1 = findViewById(R.id.follower);
         intent1 = new Intent(OtherProfile.this , Followers.class);
@@ -46,6 +48,31 @@ public class OtherProfile extends AppCompatActivity {
             }
         });
     }
+    private Intent intent3;
+    private TextView textView3;
+
+    private Intent intent4;
+    private TextView textView4;
+    private void followings1(){
+        textView3 = findViewById(R.id.following);
+        intent3 = new Intent(OtherProfile.this , Following.class);
+        textView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intent3);
+            }
+        });
+    }
+    private void followings2(){
+        textView4 = findViewById(R.id.folloingNumber);
+        intent4 = new Intent(OtherProfile.this , Following.class);
+        textView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intent4);
+            }
+        });
+    }
 
     private void back(){
         imageView = findViewById(R.id.backButtonOtherProfile);
@@ -62,6 +89,10 @@ public class OtherProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_other_profile);
+        folower1();
+        folower2();
+        followings1();
+        followings2();
         back();
         filltweetlist();
         setupRecyclerView();
