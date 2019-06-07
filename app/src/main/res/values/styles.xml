@@ -9,9 +9,10 @@
     </style>
 
     <style name="bottomNavigationMenu" parent="Widget.Design.BottomNavigationView">
-        <item name="colorPrimary">@color/colorActiveIcon</item>
+        <item name="colorPrimary" >@color/colorActiveIcon </item>
+
     </style>
-    
+
     <style name="signup_EditText_Theme" parent="Base.Widget.AppCompat.EditText">
         <item name="android:colorControlNormal">@color/colorLoginPage</item>
         <item name="android:colorControlActivated">@color/colorLoginPage</item>

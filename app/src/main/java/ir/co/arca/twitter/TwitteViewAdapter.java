@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -38,12 +39,47 @@ public class TwitteViewAdapter<M extends RecyclerView.ViewHolder> extends Recycl
         holder.getRetwitte().setImageResource(twitteList.get(position).getRetwitte());
         holder.getRetwitteNumber().setText(twitteList.get(position).getRetwitteNumber());
         holder.getTextOfTwitte().setText(twitteList.get(position).getTextOfTwitte());
-        holder.getAvatarPic().setOnClickListener(new View.OnClickListener() {
+        holder.getMention().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                context.startActivity(new Intent(context , OtherProfile.class) );
+                context.startActivity(new Intent(context, Show_this_tweet.class));
             }
         });
+        holder.getMentionNumber().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.startActivity(new Intent(context, Show_this_tweet.class));
+            }
+        });
+        holder.getTextOfTwitte().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.startActivity(new Intent(context, Show_this_tweet.class));
+            }
+        });
+//        Toast toast = Toast.makeText(context ,  context.getClass().toString() , Toast.LENGTH_LONG );
+//        toast.show();
+        if (context.getClass().getSimpleName().equals("MyProfile") || context.getClass().getSimpleName().equals("OtherProfile")) { }
+        else {
+            holder.getAvatarPic().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    context.startActivity(new Intent(context, OtherProfile.class));
+                }
+            });
+            holder.getUsername().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    context.startActivity(new Intent(context, OtherProfile.class));
+                }
+            });
+            holder.getUserId().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    context.startActivity(new Intent(context, OtherProfile.class));
+                }
+            });
+        }
     }
 
     @Override
