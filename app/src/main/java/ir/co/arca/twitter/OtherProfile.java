@@ -15,7 +15,7 @@ import java.util.List;
 public class OtherProfile extends AppCompatActivity {
     private TwitteViewAdapter twitteViewAdapter;
     private RecyclerView recyclerView;
-    private List<Twitte> twitteList = new ArrayList<>();
+    private List<Tweet> tweetList = new ArrayList<>();
 
     private Intent intent;
     private ImageView imageView;
@@ -99,12 +99,12 @@ public class OtherProfile extends AppCompatActivity {
     }
 
     private void filltweetlist(){
-        twitteList.add(new Twitte(R.drawable.default_avatar, "Keyhan", "@_say10__",
+        tweetList.add(new Tweet(R.drawable.default_avatar, "Keyhan", "@_say10__",
                 "32m", "It is a page when looking at its it has a more-or-less normal distribution of letters",
                 R.drawable.ic_mention, R.drawable.ic_renew,
                 R.drawable.ic_favorite, "4", "4",
                 "4"));
-        twitteList.add(new Twitte(R.drawable.default_avatar, "Keyhan", "@_say10__",
+        tweetList.add(new Tweet(R.drawable.default_avatar, "Keyhan", "@_say10__",
                 "32m", "It is a long estd\n" +
                 " by the readable\n" +
                 " content of a page \n" +
@@ -116,7 +116,7 @@ public class OtherProfile extends AppCompatActivity {
                 R.drawable.ic_favorite, "4", "4",
                 "4"));
         for (int i = 0; i < 50; i++) {
-            twitteList.add(new Twitte(R.drawable.default_avatar, "Keyhan", "@_say10__",
+            tweetList.add(new Tweet(R.drawable.default_avatar, "Keyhan", "@_say10__",
                     "32m", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters",
                     R.drawable.ic_mention, R.drawable.ic_renew,
                     R.drawable.ic_favorite, "4", "4",
@@ -126,7 +126,7 @@ public class OtherProfile extends AppCompatActivity {
 
     private void setupRecyclerView(){
         recyclerView = findViewById (R.id.otherProfileRecyclerView);
-        twitteViewAdapter = new TwitteViewAdapter(twitteList ,  this);
+        twitteViewAdapter = new TwitteViewAdapter(tweetList,  this);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this );
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(twitteViewAdapter);

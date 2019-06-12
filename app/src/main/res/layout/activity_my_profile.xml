@@ -27,15 +27,15 @@
             android:id="@+id/buttonEdit"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="24dp"
             android:background="@drawable/edit_click"
             android:text="Edit"
             android:textColor="@color/colorGray"
             android:textSize="15sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/textView5"
-            app:layout_constraintEnd_toEndOf="@+id/constraintLayout2" />
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayout2"
+            app:layout_constraintTop_toTopOf="parent" />
         <ImageView
             android:id="@+id/backButtonMyProfile"
             android:layout_width="25dp"
@@ -140,12 +140,11 @@
             app:layout_constraintTop_toBottomOf="@+id/follower" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/tv_bio"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="44dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-
             android:maxLines="2"
             android:text="Programmer and pizza lover! 🍕anddroid is my life *_* \nProgrammer and pizza lover! 🍕"
             android:textColor="@color/colorWhite"

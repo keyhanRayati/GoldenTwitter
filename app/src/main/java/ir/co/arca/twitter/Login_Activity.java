@@ -17,8 +17,17 @@ public class Login_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_);
-        startSignupActivity();
-        startTwitterActivity();
+        if (getSharedPreferences("gt_sp",MODE_PRIVATE).getBoolean("isLogin",false)){
+            intent2 = new Intent(Login_Activity.this, TwitterActivity.class);
+            startActivity(intent2);
+
+        }else {
+            startTwitterActivity();
+            startSignupActivity();
+            startTwitterActivity();
+        }
+
+
     }
 
     public void startSignupActivity(){
@@ -38,7 +47,18 @@ public class Login_Activity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(intent2);
+                new ApiService(Login_Activity.this).login("hasan", "password", new ApiService.OnServerCallback() {
+                    @Override
+                    public void onSuccess() {
+                        startActivity(intent2);
+                    }
+
+                    @Override
+                    public void onFailed() {
+
+                    }
+                });
+
             }
         });
 

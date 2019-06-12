@@ -1,16 +1,12 @@
 package ir.co.arca.twitter;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,7 +16,7 @@ import java.util.List;
 public class MyProfile extends AppCompatActivity {
     private TwitteViewAdapter twitteViewAdapter;
     private RecyclerView recyclerView;
-    private List<Twitte> twitteList = new ArrayList<>();
+    private List<Tweet> tweetList = new ArrayList<>();
 
     private Intent intent;
     private ImageView imageView;
@@ -34,6 +30,10 @@ public class MyProfile extends AppCompatActivity {
     private Intent intent5;
     private Button buttonEdit;
 
+    TextView followerNumber;
+    TextView followingNumber;
+    TextView fullname;
+    TextView bio;
     private void gotoEdit(){
         buttonEdit = findViewById(R.id.buttonEdit);
         intent5 = new Intent(MyProfile.this , EditProfile.class);
@@ -41,6 +41,7 @@ public class MyProfile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intent5);
+
             }
         });
     }
@@ -106,8 +107,26 @@ public class MyProfile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_my_profile);
+        followerNumber=findViewById(R.id.followerNumber);
+        followingNumber=findViewById(R.id.folloingNumber);
+        fullname=findViewById(R.id.username);
+        bio=findViewById(R.id.tv_bio);
+
+        new ApiService(MyProfile.this).getUser(new ApiService.OnUserReceived() {
+            @Override
+            public void onSuccess(User user) {
+                followerNumber.setText(String.valueOf(user.followers.size()));
+                followingNumber.setText(String.valueOf(user.followings.size()));
+                fullname.setText(user.name);
+                bio.setText(user.bio);
+            }
+
+            @Override
+            public void onFailed() {
+
+            }
+        });
         back();
         followings1();
         followings2();
@@ -119,12 +138,12 @@ public class MyProfile extends AppCompatActivity {
     }
 
     private void filltweetlist(){
-        twitteList.add(new Twitte(R.drawable.default_avatar, "Keyhan", "@_say10__",
+        tweetList.add(new Tweet(R.drawable.default_avatar, "Keyhan", "@_say10__",
                 "32m", "It is a page when looking at its it has a more-or-less normal distribution of letters",
                 R.drawable.ic_mention, R.drawable.ic_renew,
                 R.drawable.ic_favorite, "4", "4",
                 "4"));
-        twitteList.add(new Twitte(R.drawable.default_avatar, "Keyhan", "@_say10__",
+        tweetList.add(new Tweet(R.drawable.default_avatar, "Keyhan", "@_say10__",
                 "32m", "It is a long estd\n" +
                 " by the readable\n" +
                 " content of a page \n" +
@@ -136,7 +155,7 @@ public class MyProfile extends AppCompatActivity {
                 R.drawable.ic_favorite, "4", "4",
                 "4"));
         for (int i = 0; i < 50; i++) {
-            twitteList.add(new Twitte(R.drawable.default_avatar, "Keyhan", "@_say10__",
+            tweetList.add(new Tweet(R.drawable.default_avatar, "Keyhan", "@_say10__",
                     "32m", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters",
                     R.drawable.ic_mention, R.drawable.ic_renew,
                     R.drawable.ic_favorite, "4", "4",
@@ -146,7 +165,7 @@ public class MyProfile extends AppCompatActivity {
 
     private void setupRecyclerView(){
         recyclerView = findViewById (R.id.myProfileRecyclerView);
-        twitteViewAdapter = new TwitteViewAdapter(twitteList , this);
+        twitteViewAdapter = new TwitteViewAdapter(tweetList, this);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this );
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(twitteViewAdapter);

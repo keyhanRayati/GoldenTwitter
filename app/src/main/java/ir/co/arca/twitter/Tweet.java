@@ -1,23 +1,22 @@
 package ir.co.arca.twitter;
 
-import android.widget.ImageButton;
-import android.widget.TextView;
+import java.io.Serializable;
+import java.util.List;
 
-import de.hdodenhof.circleimageview.CircleImageView;
+public class Tweet implements Serializable {
 
-public class Twitte {
-
-    private int avatarPic;
-    private String username;
-    private String userId;
-    private String time;
-    private String textOfTwitte;
-    private int mention;
-    private int retwitte;
-    private int favorite;
-    private String mentionNumber;
-    private String retwitteNumber;
-    private String favoriteNumber;
+    private int avatarPic = 0;
+    private String username = "";
+    private String userId = "";
+    private String time = "";
+    private String textOfTwitte = "";
+    private int mention = 0;
+    private int retwitte = 0;
+    private int favorite = 0;
+    private String mentionNumber = "0";
+    private String retwitteNumber = "0";
+    private String favoriteNumber = "0";
+    private List<Tweet> comments;
 
 
     public int getAvatarPic() {
@@ -69,10 +68,10 @@ public class Twitte {
     }
 
 
-    public Twitte(int avatarPic, String username, String userId,
-                  String time, String textOfTwitte, int mention, int retwitte,
-                  int favorite, String mentionNumber, String retwitteNumber,
-                  String favoriteNumber) {
+    public Tweet(int avatarPic, String username, String userId,
+                 String time, String textOfTwitte, int mention, int retwitte,
+                 int favorite, String mentionNumber, String retwitteNumber,
+                 String favoriteNumber) {
 
         this.avatarPic = avatarPic;
         this.username = username;
@@ -88,4 +87,11 @@ public class Twitte {
     }
 
 
+    public List<Tweet> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Tweet> comments) {
+        this.comments = comments;
+    }
 }
